@@ -1,0 +1,5 @@
+agent/bin
+agent/sessions
+auth.json
+mcp-cache.json
+run-history.jsonl

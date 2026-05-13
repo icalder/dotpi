@@ -1,0 +1,32 @@
+{
+    "providers": {
+        "llama-swap": {
+            "baseUrl": "http://localhost:8080/v1",
+            "api": "openai-completions",
+            "apiKey": "none",
+            "models": [
+                {
+                    "id": "gemma-4-26b"
+                },
+                {
+                    "id": "gemma-4-31b"
+                },
+                {
+                    "id": "granite-4.1-30b"
+                },
+                {
+                    "id": "qwen-3-6-35b",
+                    "reasoning": true,
+                    "thinkingLevelMap": {
+                        "off": "off",
+                        "minimal": "low",
+                        "low": "low",
+                        "medium": "low",
+                        "high": "low",
+                        "xhigh": "low"
+                    }
+                }
+            ]
+        }
+    }
+}

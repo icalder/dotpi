@@ -1,0 +1,10 @@
+{
+  "lastChangelogVersion": "0.74.0",
+  "defaultProvider": "llama-swap",
+  "defaultModel": "qwen-3-6-35b",
+  "defaultThinkingLevel": "low",
+  "packages": [
+    "npm:pi-mcp-adapter",
+    "npm:pi-subagents"
+  ]
+}
