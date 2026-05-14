@@ -25,6 +25,12 @@
                         "high": "low",
                         "xhigh": "low"
                     }
+                },
+                {
+                    "id": "qwen-3-6-35b-mtp"
+                },
+                {
+                    "id": "qwen-3-6-27b-mtp"
                 }
             ]
         }
