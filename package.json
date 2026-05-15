@@ -1,0 +1,8 @@
+{
+  "name": "pi-extensions",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": "file:///home/itcalde/.npm-global/lib/node_modules/@earendil-works/pi-coding-agent"
+  }
+}
