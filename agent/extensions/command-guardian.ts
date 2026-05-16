@@ -13,12 +13,22 @@ export default function (pi: ExtensionAPI) {
                          command.includes("git push");
 
       if (isDangerous) {
+        if (!ctx.hasUI) {
+          // Allow by default in non-interactive mode (-p, JSON, RPC).
+          // Blocking here would silently break CI/CD pipelines and scripted
+          // workflows where the agent is expected to run commands autonomously.
+          // Users who want hard blocking in headless mode should not enable
+          // this extension in those environments.
+          return;
+        }
+
         const ok = await ctx.ui.confirm(
           "Dangerous Command Detected!",
           `Do you want to proceed with: \n\`${command}\`?`
         );
         
         if (!ok) {
+          ctx.ui.notify("Command blocked by Command Guardian extension", "warning");
           return { block: true, reason: "Command blocked by Command Guardian extension" };
         }
       }
