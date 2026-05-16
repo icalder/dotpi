@@ -5,7 +5,8 @@
   "defaultThinkingLevel": "low",
   "enabledModels": [
     "gemma-4-26b",
-    "qwen-3-6-35b-mtp"
+    "qwen-3-6-35b-mtp",
+    "qwen-3-6-27b-mtp"
   ],
   "packages": [
     "npm:pi-mcp-adapter",
