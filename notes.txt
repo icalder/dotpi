@@ -1,2 +1,5 @@
 # Prompts for agent, choose Pi and it puts the skill into ~/.agents/skills/frontend-design
 npx skills add https://github.com/anthropics/skills --skill frontend-design
+
+# Skills, including browser devtools
+https://github.com/badlogic/pi-skills
