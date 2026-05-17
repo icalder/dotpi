@@ -6,7 +6,8 @@
             "apiKey": "none",
             "models": [
                 {
-                    "id": "gemma-4-26b"
+                    "id": "gemma-4-26b",
+                    "input": ["text", "image"]
                 },
                 {
                     "id": "gemma-4-31b"
@@ -24,13 +25,16 @@
                         "medium": "low",
                         "high": "low",
                         "xhigh": "low"
-                    }
+                    },
+                    "input": ["text", "image"]
                 },
                 {
-                    "id": "qwen-3-6-35b-mtp"
+                    "id": "qwen-3-6-35b-mtp",
+                    "input": ["text", "image"]
                 },
                 {
-                    "id": "qwen-3-6-27b-mtp"
+                    "id": "qwen-3-6-27b-mtp",
+                    "input": ["text", "image"]
                 }
             ]
         }
