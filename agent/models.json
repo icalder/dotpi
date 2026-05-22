@@ -10,10 +10,12 @@
                     "input": ["text", "image"]
                 },
                 {
-                    "id": "gemma-4-31b"
+                    "id": "gemma-4-31b",
+                    "contextWindow": 65536
                 },
                 {
-                    "id": "granite-4.1-30b"
+                    "id": "granite-4.1-30b",
+                    "contextWindow": 65536
                 },
                 {
                     "id": "qwen-3-6-35b",
