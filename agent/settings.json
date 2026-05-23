@@ -1,15 +1,16 @@
 {
-  "lastChangelogVersion": "0.74.0",
+  "lastChangelogVersion": "0.75.5",
   "defaultProvider": "llama-swap",
   "defaultModel": "qwen-3-6-27b-mtp",
-  "defaultThinkingLevel": "low",
+  "defaultThinkingLevel": "medium",
   "enabledModels": [
     "gemma-4-26b",
+    "gemma-4-31b",
     "qwen-3-6-35b-mtp",
     "qwen-3-6-27b-mtp"
   ],
   "packages": [
     "npm:pi-mcp-adapter",
-    "npm:pi-subagents"
+    "npm:pi-web-access"
   ]
 }
