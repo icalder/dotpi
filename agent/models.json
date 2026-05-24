@@ -6,8 +6,18 @@
             "apiKey": "none",
             "models": [
                 {
+                    "id": "gemma-4-e4b",
+                    "input": [
+                        "text",
+                        "image"
+                    ]
+                },
+                {
                     "id": "gemma-4-26b",
-                    "input": ["text", "image"]
+                    "input": [
+                        "text",
+                        "image"
+                    ]
                 },
                 {
                     "id": "gemma-4-31b",
@@ -18,25 +28,18 @@
                     "contextWindow": 65536
                 },
                 {
-                    "id": "qwen-3-6-35b",
-                    "reasoning": true,
-                    "thinkingLevelMap": {
-                        "off": "off",
-                        "minimal": "low",
-                        "low": "low",
-                        "medium": "low",
-                        "high": "low",
-                        "xhigh": "low"
-                    },
-                    "input": ["text", "image"]
-                },
-                {
                     "id": "qwen-3-6-35b-mtp",
-                    "input": ["text", "image"]
+                    "input": [
+                        "text",
+                        "image"
+                    ]
                 },
                 {
                     "id": "qwen-3-6-27b-mtp",
-                    "input": ["text", "image"]
+                    "input": [
+                        "text",
+                        "image"
+                    ]
                 }
             ]
         }

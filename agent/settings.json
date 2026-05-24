@@ -1,9 +1,10 @@
 {
   "lastChangelogVersion": "0.75.5",
   "defaultProvider": "llama-swap",
-  "defaultModel": "qwen-3-6-27b-mtp",
+  "defaultModel": "gemma-4-e4b",
   "defaultThinkingLevel": "medium",
   "enabledModels": [
+    "gemma-4-e4b",
     "gemma-4-26b",
     "gemma-4-31b",
     "qwen-3-6-35b-mtp",
