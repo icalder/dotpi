@@ -21,11 +21,15 @@
                 },
                 {
                     "id": "gemma-4-31b",
+                    "input": [
+                        "text",
+                        "image"
+                    ],
                     "contextWindow": 65536
                 },
                 {
                     "id": "granite-4.1-30b",
-                    "contextWindow": 65536
+                    "contextWindow": 32768
                 },
                 {
                     "id": "qwen-3-6-35b-mtp",
