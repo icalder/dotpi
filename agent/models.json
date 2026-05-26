@@ -25,11 +25,18 @@
                         "text",
                         "image"
                     ],
-                    "contextWindow": 65536
+                    "contextWindow": 131072
                 },
                 {
                     "id": "granite-4.1-30b",
-                    "contextWindow": 32768
+                    "contextWindow": 131072
+                },
+                {
+                    "id": "qwen-3-5-9b",
+                    "input": [
+                        "text",
+                        "image"
+                    ]
                 },
                 {
                     "id": "qwen-3-6-35b-mtp",
