@@ -6,14 +6,7 @@
             "apiKey": "none",
             "models": [
                 {
-                    "id": "gemma-4-e4b",
-                    "input": [
-                        "text",
-                        "image"
-                    ]
-                },
-                {
-                    "id": "gemma-4-26b",
+                    "id": "gemma-4-12b",
                     "input": [
                         "text",
                         "image"

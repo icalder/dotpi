@@ -1,11 +1,10 @@
 {
-  "lastChangelogVersion": "0.75.5",
+  "lastChangelogVersion": "0.78.0",
   "defaultProvider": "llama-swap",
-  "defaultModel": "qwen-3-5-9b",
+  "defaultModel": "gemma-4-12b",
   "defaultThinkingLevel": "medium",
   "enabledModels": [
-    "gemma-4-e4b",
-    "gemma-4-26b",
+    "gemma-4-12b",
     "gemma-4-31b",
     "granite-4.1-30b",
     "qwen-3-5-9b",
@@ -14,6 +13,7 @@
   ],
   "packages": [
     "npm:pi-mcp-adapter",
-    "npm:pi-web-access"
+    "npm:pi-web-access",
+    "npm:pi-lens"
   ]
 }
