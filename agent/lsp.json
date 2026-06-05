@@ -1,0 +1,32 @@
+{
+    "installMode": "off",
+    "warmup": true,
+    "servers": {
+        "vtsls": {
+            "filetypes": [
+                "javascript",
+                "javascriptreact"
+            ]
+        },
+        "deno": {
+            "displayName": "Deno Language Server",
+            "filetypes": [
+                "typescript",
+                "typescriptreact"
+            ],
+            "install": {
+                "type": "system"
+            },
+            "command": [
+                "deno",
+                "lsp"
+            ],
+            "rootMarkers": [
+                "deno.json"
+            ],
+            "settings": {},
+            "initializationOptions": {},
+            "lazy": true
+        }
+    }
+}

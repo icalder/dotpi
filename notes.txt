@@ -3,3 +3,10 @@ npx skills add https://github.com/anthropics/skills --skill frontend-design
 
 # Skills, including browser devtools
 https://github.com/badlogic/pi-skills
+
+# LSP skill
+https://pi.dev/packages/pi-lsp-adapter
+/lsp install deno
+# Note: need to stop vtsls in favour of deno for .ts by reducing its filetypes - see lsp.json
+
+npm i -g typescript-language-server typescript

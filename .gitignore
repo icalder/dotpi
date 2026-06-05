@@ -1,5 +1,6 @@
 agent/bin
 agent/sessions
+agent/lsp
 auth.json
 mcp-cache.json
 run-history.jsonl
