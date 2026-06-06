@@ -14,6 +14,7 @@
   "packages": [
     "npm:pi-mcp-adapter",
     "npm:pi-web-access",
-    "npm:pi-lsp-adapter"
+    "npm:pi-lsp-adapter",
+    "npm:@gaodes/pi-graphify"
   ]
 }

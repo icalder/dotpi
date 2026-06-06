@@ -2,6 +2,14 @@
     "installMode": "off",
     "warmup": true,
     "servers": {
+        "rust-analyzer": {
+            "install": {
+                "type": "system"
+            },
+            "command": [
+                "rust-analyzer"
+            ]
+        },
         "vtsls": {
             "filetypes": [
                 "javascript",

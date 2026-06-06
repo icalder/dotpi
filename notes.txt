@@ -12,36 +12,12 @@ https://pi.dev/packages/pi-lsp-adapter
 npm i -g typescript-language-server typescript
 
 # Graphify
-Note updated step 1 in the graphify skill:
+- install graphify from Nix package to the upstream CLI tool and python module
+- don't run graphify install
+- instead use one of the following pi extensions:
 
-### Step 1 - Ensure graphify is installed
-
-```bash
-# Verify graphify CLI is available
-if ! command -v graphify >/dev/null 2>&1; then
-    echo "ERROR: graphify not found on PATH. Install it first." >&2
-    exit 1
-fi
-
-# Find the Python interpreter that can import graphify
-# Prefer the shebang from the graphify binary, fall back to python3
-GRAPHIFY_BIN=$(which graphify)
-PYTHON=$(head -1 "$GRAPHIFY_BIN" 2>/dev/null | tr -d '#!' | awk '{print $1}')
-if [ -z "$PYTHON" ] || ! "$PYTHON" -c "import graphify" 2>/dev/null; then
-    PYTHON="python3"
-fi
-if ! "$PYTHON" -c "import graphify" 2>/dev/null; then
-    echo "ERROR: graphify Python package not importable via $PYTHON" >&2
-    exit 1
-fi
-
-# Write interpreter path for all subsequent steps (persists across invocations)
-mkdir -p graphify-out
-"$PYTHON" -c "import sys; open('graphify-out/.graphify_python', 'w', encoding='utf-8').write(sys.executable)"
-# Save scan root so `graphify update` (no args) knows where to look next time
-echo "$(cd INPUT_PATH && pwd)" > graphify-out/.graphify_root
-```
-
-If the import succeeds, print nothing and move straight to Step 2.
-
-**In every subsequent bash block, replace `python3` with `$(cat graphify-out/.graphify_python)` to use the correct interpreter.**
+https://pi.dev/packages/graphify-pi
+pi install npm:graphify-pi
+Or
+https://pi.dev/packages/@gaodes/pi-graphify
+pi install npm:@gaodes/pi-graphify
