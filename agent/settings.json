@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.78.1",
+  "lastChangelogVersion": "0.79.0",
   "defaultProvider": "llama-swap",
   "defaultModel": "gemma-4-12b",
   "defaultThinkingLevel": "medium",
@@ -13,7 +13,6 @@
   ],
   "packages": [
     "npm:pi-mcp-adapter",
-    "npm:pi-web-access",
     "npm:pi-lsp-adapter",
     "npm:@gaodes/pi-graphify"
   ]
