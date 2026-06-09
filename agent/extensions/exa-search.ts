@@ -1,3 +1,5 @@
+// credit: https://github.com/vossenwout/pookie-dotfiles/blob/main/pi/.pi/agent/extensions/exa-search.ts
+
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 import { Type, type Static } from "typebox";
 
