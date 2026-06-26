@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "0.79.0",
+  "lastChangelogVersion": "0.80.2",
   "defaultProvider": "llama-swap",
-  "defaultModel": "gemma-4-12b",
+  "defaultModel": "ornith-1-0-35b",
   "defaultThinkingLevel": "medium",
   "enabledModels": [
     "gemma-4-12b",
@@ -9,11 +9,14 @@
     "granite-4.1-30b",
     "qwen-3-5-9b",
     "qwen-3-6-35b-mtp",
-    "qwen-3-6-27b-mtp"
+    "qwen-3-6-27b-mtp",
+    "ornith-1-0-35b"
   ],
   "packages": [
     "npm:pi-mcp-adapter",
     "npm:pi-lsp-adapter",
     "npm:@gaodes/pi-graphify"
-  ]
+  ],
+  "theme": "dark",
+  "hideThinkingBlock": false
 }

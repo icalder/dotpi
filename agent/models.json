@@ -44,6 +44,12 @@
                         "text",
                         "image"
                     ]
+                },
+                {
+                    "id": "ornith-1-0-35b",
+                    "input": [
+                        "text"
+                    ]
                 }
             ]
         }
