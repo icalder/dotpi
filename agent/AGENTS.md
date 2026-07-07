@@ -1,14 +1,18 @@
 # Specific Instructions
 
-## Coding
+## Tools
 
-### Tools
+Never call `ls -R` by default when exploring a directory. The output can be very large.
 
 GitHub cli `gh` is available. Use it for any GitHub search or fetch requirements.
 
-#### Rust
+The system is running NixOS. You can use `nix-shell -p` to get any program or utility that is not already installed.
+
+### Rust Tooling
 
 Always use the cratesio-mcp tool to search and retrieve Rust docs for any crate on crates.io. The tool can also return version and dependenc information for any crate.
+
+## Coding
 
 ### Software Standards
 
