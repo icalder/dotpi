@@ -25,13 +25,6 @@
                     "contextWindow": 131072
                 },
                 {
-                    "id": "qwen-3-5-9b",
-                    "input": [
-                        "text",
-                        "image"
-                    ]
-                },
-                {
                     "id": "qwen-3-6-35b-mtp",
                     "input": [
                         "text",
