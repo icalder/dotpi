@@ -43,6 +43,14 @@
                     "input": [
                         "text"
                     ]
+                },
+                {
+                    "id": "laguna-s-21",
+                    "input": [
+                        "text"
+                    ],
+                    "contextWindow": 131072,
+                    "maxTokens": 131072
                 }
             ]
         }
