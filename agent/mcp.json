@@ -3,6 +3,10 @@
         "cratesio-mcp": {
             "command": "cratesio-mcp",
             "args": []
+        },
+        "codebase-memory-mcp": {
+            "command": "codebase-memory-mcp",
+            "args": []
         }
     }
 }
