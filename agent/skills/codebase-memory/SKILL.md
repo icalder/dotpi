@@ -1,6 +1,6 @@
 ---
 name: codebase-memory
-description: Query a persistent knowledge graph (tree-sitter AST + Hybrid LSP type resolution) over any indexed codebase for architecture understanding, caller/impact analysis, and cross-file reasoning. Trigger this skill when asked to **index this project**, **index this repo**, **index this codebase**, or **index this repository** — or for structural questions about dependencies, hotspots, and code organization. Complements grep/LSP for line-level lookups.
+description: "Query a persistent knowledge graph (tree-sitter AST + Hybrid LSP type resolution) over any indexed codebase for architecture understanding, caller/impact analysis, and cross-file reasoning. Trigger on: **index this project/repo/codebase/repository**, **explore the codebase**, **understand the architecture**, **who calls X**, **what does X call**, **show dependencies**, **dead code**, **refactor candidates**, **impact analysis**. Complements grep/LSP for line-level lookups."
 ---
 
 # codebase-memory
@@ -43,7 +43,7 @@ Run `index_repository(repo_path=..., persistence=true)` to write a compressed sn
 | `get_code_snippet` | `project`, `qualified_name` *(required — from search_graph)*, `include_neighbors` | Read source for a resolved symbol (not a search tool) |
 | `detect_changes` | `project`, `scope`, `depth`, `base_branch`, `since` | Map git diff → affected symbols + risk classification |
 | `manage_adr` | `project`, `mode` (get/update/sections), `content`, `sections[]` | Persist Architecture Decision Records across sessions |
-| `ingest_traces` | `project` | Ingest runtime traces to validate HTTP_CALLS edges |
+| `ingest_traces` | `project`, `traces[]` *(required: caller/callee/count)* | Ingest runtime traces to enhance cross-repo call edges |
 
 ## Decision Tree
 
@@ -126,21 +126,22 @@ RETURN DISTINCT s.name
 ```
 
 ### Edge types in this project
-`CALLS`, `USAGE`, `DEFINES`, `DEFINES_METHOD`, `IMPORTS`, `IMPLEMENTS`, `CONTAINS_FILE`, `CONTAINS_FOLDER`, `WRITES`, `DECORATES`, `FILE_CHANGES_WITH`, `SEMANTICALLY_RELATED`, `SIMILAR_TO`. Node labels include `Function`, `Method`, `Struct`, `Enum`, `Class`, `Interface`, `Variable`, `Field`, `Module`, `File`, `Folder`, `Type`, `Route`, `Project`. Use `get_graph_schema(project=…)` to discover the full schema for any project.
+`CALLS`, `USAGE`, `DEFINES`, `DEFINES_METHOD`, `IMPORTS`, `IMPLEMENTS`, `CONTAINS_FILE`, `CONTAINS_FOLDER`, `WRITES`, `DECORATES`, `FILE_CHANGES_WITH`, `SEMANTICALLY_RELATED`, `SIMILAR_TO`, `TESTS`, `HAS_BRANCH`, `INFRA_MAPS`. Node labels include `Function`, `Method`, `Struct`, `Enum`, `Class`, `Interface`, `Variable`, `Field`, `Module`, `File`, `Folder`, `Section`, `Decorator`, `Branch`, `Type`, `Project`. Use `get_graph_schema(project=…)` for the project-specific schema.
 
 ## Trace Path Modes (`trace_path`)
 
 | Mode | Follows | Use case |
 |---|---|---|
 | `calls` *(default)* | `CALLS` edges | Caller/impact maps |
-| `data_flow` | `CALLS` + `DATA_FLOWS` | Trace how a value propagates through argument expressions |
-| `cross_service` | `HTTP_CALLS` + `ASYNC_CALLS` + `DATA_FLOWS` through Routes, plus `CROSS_*` cross-repo edges | Cross-service call chains, HTTP route ↔ call-site matching |
+| `data_flow` | `CALLS` edges (via `args` property) | Trace how a value propagates through argument expressions |
+| `cross_service` | Cross-repo `CALLS` routed through `Route` nodes | Cross-service call chains, HTTP route ↔ call-site matching |
 
 `risk_labels=true` adds CRITICAL/HIGH/MEDIUM/LOW classification by hop distance. `include_tests=true` includes test files (default: filtered out).
 
 ## Known Limitations & Gotchas
 
 - **`search_graph` under-reports callers** — uses BM25 ranking, not full edge traversal. A function with 4 callers may report `in_degree: 3`. **Always use `trace_path(direction="inbound")` for caller discovery.**
+- **`search_graph` caps at 200 results by default** — check `has_more` in the response; page with `offset` to avoid silent truncation on large result sets.
 - **Method-level resolution is spotty** — methods like `UnixTimer::new` appear in hotspots but may not be individually queryable as graph nodes. Only the parent struct may be indexed.
 - **`semantic_query` requires `mode: full` or `moderate`** — fast-index projects won't return vector results. Results appear in `semantic_results`, separate from `results`.
 - **`search_code` has no offset** — it's capped at `limit` (default 10). Raise `limit` or narrow with `file_pattern`/`path_filter` to see more.
