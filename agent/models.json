@@ -25,13 +25,6 @@
                     "contextWindow": 131072
                 },
                 {
-                    "id": "qwen-3-6-35b-mtp",
-                    "input": [
-                        "text",
-                        "image"
-                    ]
-                },
-                {
                     "id": "qwen-3-6-27b-mtp",
                     "input": [
                         "text",
@@ -42,6 +35,13 @@
                     "id": "ornith-1-0-35b",
                     "input": [
                         "text"
+                    ]
+                },
+                {
+                    "id": "muse-glimmer-30b",
+                    "input": [
+                        "text",
+                        "image"
                     ]
                 },
                 {

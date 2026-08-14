@@ -1,17 +1,18 @@
 {
-  "lastChangelogVersion": "0.84.1",
-  "defaultProvider": "openrouter",
-  "defaultModel": "poolside/laguna-s-2.1:free",
-  "defaultThinkingLevel": "medium",
+  "lastChangelogVersion": "0.84.2",
+  "defaultProvider": "llama-swap",
+  "defaultModel": "gemma-4-31b",
+  "defaultThinkingLevel": "high",
   "enabledModels": [
     "gemma-4-12b",
     "gemma-4-31b",
     "granite-4.1-30b",
-    "qwen-3-6-35b-mtp",
     "qwen-3-6-27b-mtp",
     "ornith-1-0-35b",
+    "muse-glimmer-30b",
     "laguna-s-21",
-    "poolside/laguna-s-2.1:free"
+    "poolside/laguna-s-2.1:free",
+    "nvidia/nemotron-3-ultra-550b-a55b:free"
   ],
   "packages": [
     "npm:pi-mcp-adapter",
