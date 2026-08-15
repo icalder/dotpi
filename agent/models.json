@@ -21,15 +21,35 @@
                     "contextWindow": 131072
                 },
                 {
-                    "id": "granite-4.1-30b",
-                    "contextWindow": 131072
-                },
-                {
-                    "id": "qwen-3-6-27b-mtp",
+                    "id": "qwen-3-8-27b-mtp",
                     "input": [
                         "text",
                         "image"
-                    ]
+                    ],
+                    "reasoning": true,
+                    "contextWindow": 131072,
+                    "maxTokens": 131072,
+                    "compat": {
+                        "thinkingFormat": "chat-template",
+                        "supportsReasoningEffort": true,
+                        "chatTemplateKwargs": {
+                            "enable_thinking": {
+                                "$var": "thinking.enabled"
+                            },
+                            "preserve_thinking": true,
+                            "reasoning_effort": {
+                                "$var": "thinking.effort"
+                            }
+                        }
+                    },
+                    "thinkingLevelMap": {
+                        "minimal": null,
+                        "low": "low",
+                        "medium": "medium",
+                        "high": null,
+                        "xhigh": "xhigh",
+                        "max": null
+                    }
                 },
                 {
                     "id": "ornith-1-0-35b",

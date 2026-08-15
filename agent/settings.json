@@ -1,13 +1,12 @@
 {
   "lastChangelogVersion": "0.84.2",
   "defaultProvider": "llama-swap",
-  "defaultModel": "gemma-4-31b",
-  "defaultThinkingLevel": "high",
+  "defaultModel": "qwen-3-8-27b-mtp",
+  "defaultThinkingLevel": "xhigh",
   "enabledModels": [
     "gemma-4-12b",
     "gemma-4-31b",
-    "granite-4.1-30b",
-    "qwen-3-6-27b-mtp",
+    "qwen-3-8-27b-mtp",
     "ornith-1-0-35b",
     "muse-glimmer-30b",
     "laguna-s-21",
