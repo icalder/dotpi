@@ -62,7 +62,28 @@
                     "input": [
                         "text",
                         "image"
-                    ]
+                    ],
+                    "reasoning": true,
+                    "contextWindow": 131072,
+                    "compat": {
+                        "thinkingFormat": "chat-template",
+                        "supportsReasoningEffort": false,
+                        "chatTemplateKwargs": {
+                            "reasoning_strength": {
+                                "$var": "thinking.effort"
+                            },
+                            "preserve_thinking": true
+                        }
+                    },
+                    "thinkingLevelMap": {
+                        "off": null,
+                        "minimal": null,
+                        "low": "low",
+                        "medium": "medium",
+                        "high": "high",
+                        "xhigh": "xhigh",
+                        "max": null
+                    }
                 },
                 {
                     "id": "laguna-s-21",
