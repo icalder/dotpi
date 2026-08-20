@@ -52,9 +52,10 @@
                     }
                 },
                 {
-                    "id": "ornith-1-0-35b",
+                    "id": "ornith-1-5-35b-a3b",
                     "input": [
-                        "text"
+                        "text",
+                        "image"
                     ]
                 },
                 {
