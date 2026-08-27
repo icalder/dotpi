@@ -1,8 +1,8 @@
 {
-  "lastChangelogVersion": "0.84.2",
+  "lastChangelogVersion": "0.84.3",
   "defaultProvider": "llama-swap",
   "defaultModel": "qwen-3-8-27b-mtp",
-  "defaultThinkingLevel": "medium",
+  "defaultThinkingLevel": "xhigh",
   "enabledModels": [
     "gemma-4-12b",
     "gemma-4-31b",
@@ -11,7 +11,8 @@
     "muse-glimmer-30b",
     "laguna-s-21",
     "poolside/laguna-s-2.1:free",
-    "nvidia/nemotron-3-ultra-550b-a55b:free"
+    "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "qwen-3-8-flash-next"
   ],
   "packages": [
     "npm:pi-mcp-adapter",

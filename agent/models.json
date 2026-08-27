@@ -93,6 +93,14 @@
                     ],
                     "contextWindow": 131072,
                     "maxTokens": 131072
+                },
+                {
+                    "id": "qwen-3-8-flash-next",
+                    "contextWindow": 131072,
+                    "input": [
+                        "text",
+                        "image"
+                    ]
                 }
             ]
         }
