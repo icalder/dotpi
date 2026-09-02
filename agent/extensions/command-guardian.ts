@@ -306,6 +306,11 @@ class DeletionRule implements CommandRule {
 
 /** `-delete` removes whole trees, `-exec` runs an arbitrary program. */
 const FIND_DELETE_ACTION = "-delete";
+/**
+ * `-delete` spelled anywhere in a statement, inside quotes or not. The
+ * lookbehind keeps `--delete` and `x-delete` from matching.
+ */
+const FIND_DELETE_MENTION = /(?<![-\w])-delete\b/;
 const FIND_EXPRESSION_START = /^[-(!]/;
 const FIND_EXEC_ACTIONS: ReadonlySet<string> = new Set([
   "-exec",
@@ -353,7 +358,13 @@ class FindDeleteRule implements CommandRule {
 
     const position = commandPosition(tokenize(statement));
     if (!position) return true;
-    if (!runsProgram(position, "find")) return true; // find mentioned in another command
+    if (!runsProgram(position, "find")) {
+      // find is only mentioned, e.g. `grep ... $(find . | head)` (the
+      // `$( ... )` substitution splits into its own fragment) or
+      // `bash -c 'find / -delete'`. A mention is not a deletion unless
+      // `-delete` is actually spelled in the statement.
+      return FIND_DELETE_MENTION.test(statement);
+    }
 
     const { startPaths, expression } = parseFindArguments(position.args);
     if (!expression.includes(FIND_DELETE_ACTION)) return false;

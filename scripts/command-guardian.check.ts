@@ -88,6 +88,14 @@ const cases: ReadonlyArray<readonly [string, boolean]> = [
   ["rm -f $(ls /tmp)", true],
   ["rm -$FLAG /tmp/x", true],
 
+  // a `find` mentioned in another command's arguments is not a find command,
+  // even when the `$( ... | ... )` substitution is split into its own fragment
+  ["grep -n x $(find . -name '*.h' | head -1)", false],
+  ["cd /home/itcalde/speech-processing/handy-transcribe/transcribe.cpp && find . -name \"wav.h\" -not -path \"./build/*\" | head -3 && grep -n \"rate\\|resample\\|48000\\|16000\" $(find . -name \"wav.h\" -not -path \"./build/*\" | head -1) | head -20", false],
+  // ...but a `-delete` spelled behind another program still asks
+  ["echo find /tmp -delete", true],
+  ["bash -c 'find / -delete'", true],
+
   // shapes that cannot be read stay noisy
   ["rm", true],
   ["rm -", true],
