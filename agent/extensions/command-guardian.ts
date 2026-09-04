@@ -285,7 +285,8 @@ class DeletionRule implements CommandRule {
     this.safeZone = safeZone;
     this.allowRecursive = allowRecursive;
     this.name = spec.name;
-    this.mentionPattern = new RegExp(`\\b${spec.program}\\b`);
+    // `(?<!-)` keeps the filter from firing on flags like `--rm` or `--shred` that happen to spell a deleter name: the program word must stand on its own, not be the tail of `--<word>`.
+    this.mentionPattern = new RegExp(`(?<!-)\\b${spec.program}\\b`);
   }
 
   requiresConfirmation(statement: string): boolean {

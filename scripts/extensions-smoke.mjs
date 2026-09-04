@@ -88,6 +88,8 @@ const commandCases = [
   ["find /tmp/build -delete", 1],
   ["git push origin main", 1],
   ["bash rm", 1],
+  ["podman compose run --rm someimage", 0],
+  ["docker run --rm someimage", 0],
 ];
 
 for (const [command, expectedPrompts] of commandCases) {

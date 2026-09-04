@@ -67,6 +67,14 @@ const cases: ReadonlyArray<readonly [string, boolean]> = [
   ["ls -la /tmp", false],
   ["git status", false],
 
+  // deleter names used as flags, e.g. `podman compose run --rm`
+  ["podman compose run --rm someimage", false],
+  ["docker compose run --rm someimage", false],
+  ["docker run --rm someimage", false],
+  ["podman run --rm -it someimage bash", false],
+  ["podman compose run --rm --entrypoint wp auto-install eval 'echo hi'", false],
+  ["echo --rm file", false],
+  ["echo --unlink /tmp/x", false],
   // recursive removal keeps prompting by default
   ["rm -rf /tmp/*", true],
   ["rm -r /tmp/*", true],
