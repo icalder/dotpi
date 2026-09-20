@@ -7,6 +7,7 @@ import { isToolCallEventType } from "@earendil-works/pi-coding-agent";
  * Configuration (environment, no edit of this file needed):
  *   PI_GUARDIAN_SAFE_DELETE_PATHS="/tmp/:/var/tmp/"  absolute scratch prefixes, colon separated
  *   PI_GUARDIAN_ALLOW_RECURSIVE=1                    stop prompting for recursive removal inside them
+ *   PI_SANDBOX=1                                     disable the guard entirely (set by agent-sandbox)
  *
  * Limits of static text analysis, accepted by design:
  *   - symlinks are not resolved: a scratch path can point somewhere else
@@ -25,6 +26,9 @@ const SAFE_PATHS_ENV = "PI_GUARDIAN_SAFE_DELETE_PATHS";
 
 /** "1" or "true" allows recursive removal inside a scratch prefix without a prompt. */
 const ALLOW_RECURSIVE_ENV = "PI_GUARDIAN_ALLOW_RECURSIVE";
+
+/** "1" or "true" disables the guard entirely; set by the agent sandbox. */
+const SANDBOX_ENV = "PI_SANDBOX";
 
 /** Recursive removal amplifies a wrong target, so it prompts unless opted out. */
 const DEFAULT_ALLOW_RECURSIVE = false;
@@ -470,6 +474,11 @@ const guard = createCommandGuard();
 /* --------------------------------------------------------------- extension */
 
 export default function (pi: ExtensionAPI) {
+  // Inside the agent sandbox the sandbox is the safety net, so the
+  // per-command prompts would only add friction.
+  const sandbox = environmentValue(SANDBOX_ENV)?.trim().toLowerCase();
+  if (sandbox === "1" || sandbox === "true") return;
+
   pi.on("tool_call", async (event, ctx) => {
     if (!isToolCallEventType("bash", event)) return;
 

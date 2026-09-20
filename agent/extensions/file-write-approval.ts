@@ -6,8 +6,20 @@ import { isToolCallEventType } from "@earendil-works/pi-coding-agent";
 /**
  * Approves file writes and edits. Destructive shell commands are handled by
  * command-guardian.ts, which knows which paths are disposable.
+ *
+ * Configuration (environment, no edit of this file needed):
+ *   PI_SANDBOX=1  disable the approval prompts (set by agent-sandbox)
  */
+
+/** "1" or "true" disables the prompts; set by the agent sandbox. */
+const SANDBOX_ENV = "PI_SANDBOX";
+
 export default function (pi: ExtensionAPI) {
+  // Inside the agent sandbox the sandbox is the safety net, so the
+  // per-write prompts would only add friction.
+  const sandbox = process.env[SANDBOX_ENV]?.trim().toLowerCase();
+  if (sandbox === "1" || sandbox === "true") return;
+
   let sessionApproved = false;
   const approvedPaths = new Set<string>();
 
