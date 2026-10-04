@@ -1,5 +1,21 @@
 {
     "providers": {
+        "strata": {
+            "baseUrl": "http://localhost:8081/v1",
+            "api": "openai-completions",
+            "apiKey": "none",
+            "models": [
+                {
+                    "id": "qwen3.8-flash-next-unsloth-ud-iq4_xs",
+                    "contextWindow": 131072,
+                    "maxTokens": 131072,
+                    "input": [
+                        "text",
+                        "image"
+                    ]
+                }
+            ]
+        },
         "llama-swap": {
             "baseUrl": "http://localhost:8080/v1",
             "api": "openai-completions",
@@ -97,6 +113,7 @@
                 {
                     "id": "qwen-3-8-flash-next",
                     "contextWindow": 131072,
+                    "maxTokens": 131072,
                     "input": [
                         "text",
                         "image"

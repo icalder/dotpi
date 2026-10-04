@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.84.3",
+  "lastChangelogVersion": "1.0.2",
   "defaultProvider": "llama-swap",
   "defaultModel": "qwen-3-8-27b-mtp",
   "defaultThinkingLevel": "xhigh",
@@ -12,12 +12,13 @@
     "laguna-s-21",
     "poolside/laguna-s-2.1:free",
     "nvidia/nemotron-3-ultra-550b-a55b:free",
-    "qwen-3-8-flash-next"
+    "qwen-3-8-flash-next",
+    "qwen3.8-flash-next-unsloth-ud-iq4_xs"
   ],
-  "packages": [
-    "npm:pi-mcp-adapter",
-    "npm:pi-lsp-adapter"
-  ],
+  "packages": [],
   "theme": "dark",
-  "hideThinkingBlock": false
+  "hideThinkingBlock": false,
+  "extensions": [
+    "+builtin:mcp"
+  ]
 }
