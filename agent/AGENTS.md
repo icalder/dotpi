@@ -4,6 +4,10 @@
 
 Never call `ls -R` by default when exploring a directory. The output can be very large.
 
+Never run `find /` (or any filesystem-wide search). The host is WSL and a scan from the root outlives the session — start from a named directory, or use `rg --files`.
+
+Avoid `sleep` in tool calls unless it is essential, and then only a short one. To wait on a long command, run it in the background with its output to a log file and read the log.
+
 GitHub cli `gh` is available. Use it for any GitHub search or fetch requirements.
 
 The system is running NixOS. You can use `nix-shell -p` to get any program or utility that is not already installed.
