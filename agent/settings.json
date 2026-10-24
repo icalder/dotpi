@@ -14,6 +14,7 @@
     "nvidia/nemotron-3-ultra-550b-a55b:free",
     "qwen-3-8-flash-next",
     "qwen3.8-flash-next-nvfp4-nvfp4",
+    "Qwen3.8-Flash-Next NVIDIA-NVFP4",
     "glm-5.3-flash"
   ],
   "packages": [],
@@ -21,8 +22,5 @@
   "hideThinkingBlock": false,
   "extensions": [
     "+builtin:mcp"
-  ],
-  "compaction": {
-    "reserveTokens": 20480
-  }
+  ]
 }

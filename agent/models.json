@@ -16,8 +16,24 @@
                 }
             ]
         },
+        "basalt": {
+            "baseUrl": "http://localhost:8080/v1",
+            "api": "openai-completions",
+            "apiKey": "none",
+            "models": [
+                {
+                    "id": "Qwen3.8-Flash-Next NVIDIA-NVFP4",
+                    "contextWindow": 131072,
+                    "maxTokens": 131072,
+                    "input": [
+                        "text",
+                        "image"
+                    ]
+                }
+            ]
+        },
         "project-maya": {
-            "baseUrl": "http://localhost:8081/v1",
+            "baseUrl": "http://localhost:8080/v1",
             "api": "openai-completions",
             "apiKey": "none",
             "models": [
