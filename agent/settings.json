@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "1.3.0",
+  "lastChangelogVersion": "1.4.0",
   "defaultProvider": "llama-swap",
   "defaultModel": "qwen-3-8-27b-mtp",
   "defaultThinkingLevel": "xhigh",
@@ -13,7 +13,8 @@
     "poolside/laguna-s-2.1:free",
     "nvidia/nemotron-3-ultra-550b-a55b:free",
     "qwen-3-8-flash-next",
-    "qwen3.8-flash-next-nvfp4-nvfp4"
+    "qwen3.8-flash-next-nvfp4-nvfp4",
+    "glm-5.3-flash"
   ],
   "packages": [],
   "theme": "dark",
