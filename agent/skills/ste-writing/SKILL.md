@@ -44,7 +44,7 @@ Write only the requested text. No preamble, no summary, no closing remarks.
 Write the text to a file, then run the checker. Do not hand-write grep commands for this.
 
 ```
-python3 ~/.claude/skills/ste-writing/scripts/ste-lint.py --mode flavored FILE
+python3 ~/.pi/agent/skills/ste-writing/scripts/ste-lint.py --mode flavored FILE
 ```
 
 Flags:
